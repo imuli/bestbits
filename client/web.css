@@ -5,26 +5,6 @@
 header h1, header h3 {
 	text-align: center;
 }
-.newbit {
-	margin: 1em auto;
-	display: block;
-	width: 80ex;
-}
-#newbit {
-	height: 10em;
-	width: 99%;
-}
-.bit {
-	margin: 0;
-	display: block;
-	min-height: 10em;
-	max-height: 40em;
-	width: 100%; /* … */
-	border: solid 1px lightgray;
-	overflow-y: auto;
-	white-space: pre-wrap;
-	clear: both;
-}
 
 .bits {
 	list-style: none;
@@ -33,14 +13,26 @@ header h1, header h3 {
 	display: block;
 }
 
-.bits li {
-	display: inline-block;
-	vertical-align: top;
-	width: 80ex;
-	margin: 1em 1em;
+.bit {
+	display: block;
+	min-width: 41em;
+	width: 75%;
+	margin: 1em auto;
+	padding: 0;
 }
 
-.bits li h2 {
+.bit textarea {
+	min-height: 10em;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: block;
+	white-space: pre-wrap;
+	word-break: break-word;
+	clear: both;
+}
+
+.bit h2 {
 	display: inline-block;
 	padding: 0;
 	margin: 0;
@@ -52,7 +44,7 @@ header h1, header h3 {
 	float: right;
 	padding: 0;
 }
-.bits li .delete {
+.delete {
 	float: right;
 	color: red;
 }

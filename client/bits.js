@@ -22,7 +22,6 @@ Template.body.events({
 Template.bit.helpers({
 	canVote: function(n){
 		var vote;
-		console.log(this);
 		if(this.votes === undefined || this.votes[Meteor.user()._id] === undefined)
 			vote = 0
 		else
@@ -44,6 +43,9 @@ Template.bit.events({
 
 Template.bit.onRendered(function(){
 	// do syntax highlighting here
+	console.log(this.data._id)
+	var el = document.getElementById(this.data._id);
+	el.style.height = el.scrollHeight + "px";
 });
 
 Accounts.ui.config({

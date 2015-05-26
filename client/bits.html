@@ -23,10 +23,10 @@
 </body>
 
 <template name="newbit">
-<div class="newbit">
+<div class="bit">
 	<label class="title">Title: <input name="title" placeholder="Hello World"></label>
 	<label class="language">Language: <input name="language" placeholder="C"></label>
-	<textarea class="bit" name="code" id="newbit" placeholder='#include <stdio.h>
+	<textarea name="code" id="newbit" placeholder='#include <stdio.h>
 	
 int
 main(int argc, char** argv){
@@ -38,11 +38,11 @@ main(int argc, char** argv){
 </template>
 
 <template name="bit">
-<li>
+<li class="bit">
 	<h2 class="votes">{{vote}}</h2>
 	<h2 class="title">{{title}}</h2>
 	<h2 class="language">({{language}})</h2>
-	<pre class="bit" id="{{_id.toHexString}}">{{code}}</pre>
+	<textarea id="{{_id}}" readonly>{{code}}</textarea>
 	{{#if currentUser}}
 	{{#if canVote 1}}
 	<button class="vote" value="1">+1</button>

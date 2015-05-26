@@ -1,0 +1,58 @@
+/* CSS declarations go here */
+#login-buttons {
+	position: absolute;
+}
+header h1, header h3 {
+	text-align: center;
+}
+.newbit {
+	margin: 1em auto;
+	display: block;
+	width: 80ex;
+}
+#newbit {
+	height: 10em;
+	width: 99%;
+}
+.bit {
+	margin: 0;
+	display: block;
+	min-height: 10em;
+	max-height: 40em;
+	width: 100%; /* … */
+	border: solid 1px lightgray;
+	overflow-y: auto;
+	white-space: pre-wrap;
+	clear: both;
+}
+
+.bits {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: block;
+}
+
+.bits li {
+	display: inline-block;
+	vertical-align: top;
+	width: 80ex;
+	margin: 1em 1em;
+}
+
+.bits li h2 {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+.votes {
+	width: 2em;
+}
+.language {
+	float: right;
+	padding: 0;
+}
+.bits li .delete {
+	float: right;
+	color: red;
+}

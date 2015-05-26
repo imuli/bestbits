@@ -1,0 +1,61 @@
+<head>
+  <title>Best Bits</title>
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			{{> loginButtons}}
+			<h1>Best Bits</h1>
+			<h3>a collection of exceptional snippets</h3>
+		</header>
+		{{#if currentUser}}
+		<form class="new-bit">
+			{{> newbit}}
+		</form>
+		{{/if}}
+		<ul class="bits">
+			{{#each bits}}
+			{{> bit}}
+			{{/each}}
+		</ul>
+	</div>
+</body>
+
+<template name="newbit">
+<div class="newbit">
+	<label class="title">Title: <input name="title" placeholder="Hello World"></label>
+	<label class="language">Language: <input name="language" placeholder="C"></label>
+	<textarea class="bit" name="code" id="newbit" placeholder='#include <stdio.h>
+	
+int
+main(int argc, char** argv){
+	printf("Hello World!\n");
+	return 0;
+}'></textarea>
+	<button type="submit">Add</button>
+</div>
+</template>
+
+<template name="bit">
+<li>
+	<h2 class="votes">{{vote}}</h2>
+	<h2 class="title">{{title}}</h2>
+	<h2 class="language">({{language}})</h2>
+	<pre class="bit" id="{{_id.toHexString}}">{{code}}</pre>
+	{{#if currentUser}}
+	{{#if canVote 1}}
+	<button class="vote" value="1">+1</button>
+	{{/if}}
+	{{#if canVote 0}}
+	<button class="vote" value="0">&nbsp;0&nbsp;</button>
+	{{/if}}
+	{{#if canVote -1}}
+	<button class="vote" value="-1">−1</button>
+	{{/if}}
+	{{#if isMine}}
+	<button class="delete">X</button>
+	{{/if}}
+	{{/if}}
+</li>
+</template>
